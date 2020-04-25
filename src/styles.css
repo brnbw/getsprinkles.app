@@ -1,0 +1,59 @@
+:root {
+  --spr-mint: rgba(160, 255, 228, 1);
+  --spr-blue: rgba(134, 217, 255, 1);
+  --spr-pink: rgba(255, 203, 254, 1);
+}
+
+@tailwind base;
+@tailwind components;
+
+body {
+  background-color: #242a35;
+}
+
+.pastel-gradient {
+  color: transparent;
+  background: var(--spr-mint);
+  background: linear-gradient(
+    164deg,
+    var(--spr-mint) 0%,
+    var(--spr-blue) 50%,
+    var(--spr-pink) 100%
+  );
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  background-clip: text;
+}
+
+.bg-nord {
+  background-color: #2e3440;
+}
+
+.text-shadow-m {
+  text-shadow: rgba(0, 0, 0, .2) 0 1px 2px, rgba(0, 0, 0, 0.3) 0 0 15px, rgba(0, 0, 0, 0.1) 0 0 25px;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  font-family: 'Fantasque Sans Mono', monospace !important;
+  font-weight: 300;
+}
+
+[class*="language-"] .token.important {
+  font-weight: normal !important;
+}
+
+[x-cloak] {
+  display: none;
+}
+
+.font {
+  font-family: 'Inter';
+}
+
+.btn {
+  @apply flex items-center font-bold py-2 px-4 rounded;
+}
+
+@tailwind utilities;
+

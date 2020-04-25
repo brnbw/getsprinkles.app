@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Mikkel Malmberg</title>
+    <script src="./main.js" defer></script>
+  </head>
+  <body class="font-sans min-h-screen p-3 md:p-6">
+    <header class="container my-6 mx-auto leading-none font">
+      <h1 class="mb-3">
+        <a href='/' class='btn text-white space-x-2'>
+          <img src="./AppIcon-512px.png" width="32" />
+          Sprinkles
+        </a>
+      </h1>
+      <h1 class="text-2xl lg:text-6xl xl:text-6xl font-black">
+        <span class="pastel-gradient">
+          Sprinkles lets you add custom CSS and JavaScript to any website
+        </span>
+      </h1>
+    </header>
+    <div class="h-6"></div>
+    <div
+      class="container mx-auto md:flex items-start justify-center mb-6"
+      x-data="{ tab: 0 }"
+    >
+      <div
+        class="flex-none w-full md:w-1/2 shadow-xl text-white text-xs font-mono px-1 subpixel-antialiased bg-nord rounded-lg leading-normal overflow-hidden"
+      >
+        <div class="flex items-center px-3 pt-2">
+          <div class="flex flex-none space-x-2">
+            <span class="h-3 w-3 bg-red-500 rounded-full"></span>
+            <span class="h-3 w-3 bg-orange-300 rounded-full"></span>
+            <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+          </div>
+          <div class="w-2"></div>
+          <div
+            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
+            :class="tab == 0 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
+            @click="tab = 0"
+          >
+            news.ycombinator.com.css
+          </div>
+          <div
+            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
+            :class="tab == 1 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
+            @click="tab = 1"
+          >
+            global.js
+          </div>
+        </div>
+        <pre x-show="tab == 0"><code class="language-css text-sm">/**
+ * When you visit any site, Sprinkles checks a directory on your
+ * computer for .css and .js files matching the site's hostname.
+ *
+ * For example, let's make The Orange Website™ actually readable,
+ * in `news.ycombinator.com.css`:
+ */
+* { font-family: system-ui !important; }
+.title { font-size: 18px; font-weight: 600; }
+.comment { font-size: 16px; line-height: 1.5; max-width: 48em; }
+.subtext { font-size: 14px; }
+tr.spacer { height: 14px !important; }
+
+/* Make it more creeaaammmyyy */
+body { background: papayawhip; }
+/* Why the hell not? */
+#hnmain {
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 25px;
+  margin: 20px auto;
+  display: block;
+}</code></pre>
+        <pre x-show="tab == 1" x-cloak><code class="language-js text-sm">//
+// Code in global.js and global.css will be loaded on all sites.
+//
+// Here's a snippet from my global.js that gives me a panic button to
+// fix anything but pleasant typography. Which I do all the time:
+//
+let styleElm = null;
+
+document.addEventListener("keyup", event => {
+  // ctrl+alt+s toggles the font fix
+  if (event.keyCode === 83 && event.ctrlKey && event.altKey) {
+    if (styleElm) { styleElm.remove(); styleElm = null; return; }
+
+    styleElm = document.createElement("style");
+    styleElm.innerHTML = `
+      * {
+        font-family: system-ui, sans-serif !important;
+      }
+      body {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+      p {
+        font-weight: 400 !important;
+        max-width: 40em;
+        line-height: 1.5 !important;
+      }
+    `;
+    document.body.appendChild(styleElm);
+  }
+});</code></pre>
+      </div>
+      <div class="flex-auto">
+        <img src="./browsers@2x.png" class="w100" />
+      </div>
+    </div>
+    <div class="container mx-auto md:flex items-start justify-center mb-6">
+      asdf
+    </div>
+  </body>
+</html>
