@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      fontSize: {
+        "7xl": "5rem",
+      },
       colors: {
         "spr-pink": "var(--spr-pink)",
         "spr-blue": "var(--spr-blue)",

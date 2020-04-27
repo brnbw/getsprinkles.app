@@ -10,26 +10,39 @@
 
     <link rel="stylesheet" href="./styles.css" />
 
-    <title>Mikkel Malmberg</title>
+    <title>Sprinkles – Customize any website</title>
     <script src="./main.js" defer></script>
   </head>
-  <body class="font-sans min-h-screen p-3 md:p-6">
-    <header class="container my-6 mx-auto leading-none font">
-      <h1 class="mb-3">
-        <a href='/' class='btn text-white space-x-2'>
-          <img src="./AppIcon-512px.png" width="32" />
-          Sprinkles
-        </a>
+  <body class="text-lg text-gray-200">
+    <nav
+      class="container p-3 md:p-6 mx-auto flex items-center space-x-2 text-xs"
+    >
+      <a href="/" class="btn border-gray-700">
+        <img src="./AppIcon-512px.png" width="16" class="block mr-1" />
+        Sprinkles
+      </a>
+      <a href="#sign-up" class="btn">Download for macOS</a>
+      <a href="/support" class="btn">Support</a>
+      <div class="flex-auto"></div>
+      <a href="#sign-up" class="cursor-not-allowed opacity-25"
+        ><img src="./app-store.svg" class="float-right"
+      /></a>
+    </nav>
+
+    <header class="container p-3 md:p-6 my-6 py-3 mx-auto leading-none">
+      <h1
+        class="py-3 pastel-gradient bg-clip-text mb-6 text-2xl lg:text-6xl xl:text-7xl max-w-4xl font-black"
+      >
+        Modify any website with your own CSS and JavaScript
       </h1>
-      <h1 class="text-2xl lg:text-6xl xl:text-6xl font-black">
-        <span class="pastel-gradient">
-          Sprinkles lets you add custom CSS and JavaScript to any website
-        </span>
-      </h1>
+      <h2 class="font-normal text-xl">
+        <span class="text-gray-600">Part Mac app, part browser extension.</span>
+        Let's see how it works&hellip;
+      </h2>
     </header>
     <div class="h-6"></div>
     <div
-      class="container mx-auto md:flex items-start justify-center mb-6"
+      class="container px-3 md:px-6 mx-auto md:flex items-start justify-center mb-6"
       x-data="{ tab: 0 }"
     >
       <div
@@ -115,8 +128,104 @@ document.addEventListener("keyup", event => {
         <img src="./browsers@2x.png" class="w100" />
       </div>
     </div>
-    <div class="container mx-auto md:flex items-start justify-center mb-6">
-      asdf
+
+    <div class="h-6"></div>
+
+    <div class="pastel-gradient text-black py-6">
+      <div class="py-6 mx-auto text-xl grid grid-cols-2 max-w-5xl gap-3">
+        <article class="">
+          <h3>How does it work?</h3>
+          <p>
+            Sprinkles runs a tiny webserver on you machine. When you visit a
+            website, the browser extension asks this server for scripts. The
+            server looks for 4 files in your Sprinkles scripts directory:
+          </p>
+          <ol class="list-decimal">
+            <li><code>global.js</code></li>
+            <li><code>global.css</code></li>
+            <li><code>github.com.js</code></li>
+            <li><code>github.com.css</code></li>
+          </ol>
+          <p>
+            When there's a hit, the extension adds the provided JS and CSS.
+          </p>
+        </article>
+
+        <article class="">
+          <h3>Why is it great?</h3>
+          <ol class="list-decimal">
+            <li>Edit scripts in the editor of your choice</li>
+            <li>
+              Like UserScripts or Stylish &mdash; but combined and bundled into
+              one
+            </li>
+            <li>
+              Portable between browsers with support for Safari, Google Chrome
+              and Firefox
+            </li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="py-6 mx-auto text-xl max-w-5xl">
+        <article class="w-1/2 mx-auto">
+          <h3>Interested?</h3>
+          <p class="mb-4">
+            Sprinkles is still getting ready for its first release — but you can
+            try it now if you aren't scared away by words like beta or
+            experimental. (I use it all day, every day.)
+          </p>
+          <p>
+            Sign up to download the beta and get updates on development. No
+            spam, of course.
+          </p>
+        </article>
+
+        <div class="h-6 my-3"></div>
+
+        <div class="w-1/2 mx-auto p-3 bg-white rounded-lg">
+          <form
+            action="https://brnbw.us8.list-manage.com/subscribe/post?u=56b30b1ea0286dd3e796d4c9a&amp;id=2d7693c57f"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="measure center ma0"
+            target="_blank"
+            validate="validate"
+          >
+            <div class="md:flex items-stretch">
+              <input
+                type="email"
+                placeholder="tim@apple.com"
+                class="flex-auto input w-full md:w-auto"
+                name="EMAIL"
+                required=""
+              /><button
+                type="submit"
+                name="subscribe"
+                class="flex-none btn bg-black text-white w-full md:w-auto rounded px-3"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input
+                type="text"
+                name="b_56b30b1ea0286dd3e796d4c9a_2d7693c57f"
+                tabindex="-1"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+    <footer class="text-center text-sm py-6 mb-6">
+      <div class="py-6">
+        <a href="/" class="text-spr-mint font-bold">Sprinkles</a>
+        is a
+        <a href="https://brainbow.studio" class="text-spr-mint font-bold">Brainbow</a>
+        project.
+      </div>
+    </footer>
   </body>
 </html>

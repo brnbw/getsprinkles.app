@@ -1,3 +1,5 @@
+@import url("https://rsms.me/inter/inter.css");
+
 :root {
   --spr-mint: rgba(160, 255, 228, 1);
   --spr-blue: rgba(134, 217, 255, 1);
@@ -5,24 +7,49 @@
 }
 
 @tailwind base;
-@tailwind components;
+
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
 
 body {
   background-color: #242a35;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl font-bold mt-3 mb-2;
+}
+
+ul, ol {
+  @apply mt-3 mb-2 pl-3 list-inside;
 }
 
 .pastel-gradient {
   color: transparent;
   background: var(--spr-mint);
   background: linear-gradient(
-    164deg,
+    183deg,
     var(--spr-mint) 0%,
     var(--spr-blue) 50%,
     var(--spr-pink) 100%
   );
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* background-attachment: fixed; */
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
@@ -31,11 +58,13 @@ body {
 }
 
 .text-shadow-m {
-  text-shadow: rgba(0, 0, 0, .2) 0 1px 2px, rgba(0, 0, 0, 0.3) 0 0 15px, rgba(0, 0, 0, 0.1) 0 0 25px;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px, rgba(0, 0, 0, 0.3) 0 0 15px,
+    rgba(0, 0, 0, 0.1) 0 0 25px;
 }
 
-code[class*="language-"], pre[class*="language-"] {
-  font-family: 'Fantasque Sans Mono', monospace !important;
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Fantasque Sans Mono", monospace !important;
   font-weight: 300;
 }
 
@@ -47,13 +76,32 @@ code[class*="language-"], pre[class*="language-"] {
   display: none;
 }
 
-.font {
-  font-family: 'Inter';
+.btn {
+  transition: transform 0.1s ease-in-out;
+  border-color: transparent;
+  @apply inline-flex border-2 items-center font-semibold py-1 px-2 rounded-md;
 }
 
-.btn {
-  @apply flex items-center font-bold py-2 px-4 rounded;
+.btn:focus {
+  @apply outline-none border-2 border-spr-mint;
 }
+
+.btn:hover {
+  box-shadow: inset 0 0 0 30em rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.input {
+  @apply p-2 bg-gray-200 rounded border-2 border-transparent;
+}
+
+.input:focus {
+  @apply outline-none border-spr-mint;
+}
+
+@tailwind components;
 
 @tailwind utilities;
-
