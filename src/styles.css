@@ -1,5 +1,3 @@
-@import url("https://rsms.me/inter/inter.css");
-
 :root {
   --spr-mint: rgba(160, 255, 228, 1);
   --spr-blue: rgba(134, 217, 255, 1);
@@ -7,15 +5,6 @@
 }
 
 @tailwind base;
-
-html {
-  font-family: "Inter", sans-serif;
-}
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
-}
 
 body {
   background-color: #242a35;
