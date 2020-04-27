@@ -21,26 +21,26 @@
         <img src="./AppIcon-512px.png" width="16" class="block mr-1" />
         Sprinkles
       </a>
-      <a href="#sign-up" class="btn">Download for macOS</a>
+      <a href="#sign-up" class="btn hidden sm:block">Download for macOS</a>
       <a href="/support" class="btn">Support</a>
       <div class="flex-auto"></div>
-      <a href="#sign-up" class="cursor-not-allowed opacity-25"
+      <a href="#sign-up" class="cursor-not-allowed opacity-25 hidden sm:block"
         ><img src="./app-store.svg" class="float-right"
       /></a>
     </nav>
 
-    <header class="container p-3 md:p-6 my-6 py-3 mx-auto leading-none">
+    <header class="container p-3 md:p-6 md:my-6 py-3 mx-auto leading-none">
       <h1
-        class="py-3 pastel-gradient bg-clip-text mb-6 text-2xl lg:text-6xl xl:text-7xl max-w-4xl font-black"
+        class="mt-3 pastel-gradient bg-clip-text mb-6 text-3xl lg:text-6xl xl:text-7xl max-w-4xl font-black"
       >
         Modify any website with your own CSS and JavaScript
       </h1>
-      <h2 class="font-normal text-xl">
+      <h2 class="font-normal text-xl leading-tight">
         <span class="text-gray-600">Part Mac app, part browser extension.</span>
         Let's see how it works&hellip;
       </h2>
     </header>
-    <div class="h-6"></div>
+    <div class="h-6 hidden sm:block"></div>
     <div
       class="container px-3 md:px-6 mx-auto md:flex items-start justify-center mb-6"
       x-data="{ tab: 0 }"
@@ -124,15 +124,15 @@ document.addEventListener("keyup", event => {
   }
 });</code></pre>
       </div>
-      <div class="flex-auto">
+      <div class="flex-auto hidden sm:block">
         <img src="./browsers@2x.png" class="w100" />
       </div>
     </div>
 
-    <div class="h-6"></div>
+    <div class="h-6 hidden sm:block"></div>
 
-    <div class="pastel-gradient text-black py-6">
-      <div class="py-6 mx-auto text-xl grid grid-cols-2 max-w-5xl gap-3">
+    <div class="pastel-gradient text-black p-3 md:py-6">
+      <div class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-3">
         <article class="">
           <h3>How does it work?</h3>
           <p>
@@ -167,8 +167,8 @@ document.addEventListener("keyup", event => {
         </article>
       </div>
 
-      <div class="py-6 mx-auto text-xl max-w-5xl">
-        <article class="w-1/2 mx-auto">
+      <div class="py-6 mx-auto text-lg lg:text-xl max-w-5xl">
+        <article class="md:w-1/2 mx-auto">
           <h3>Interested?</h3>
           <p class="mb-4">
             Sprinkles is still getting ready for its first release — but you can
@@ -183,7 +183,7 @@ document.addEventListener("keyup", event => {
 
         <div class="h-6 my-3"></div>
 
-        <div class="w-1/2 mx-auto p-3 bg-white rounded-lg">
+        <div class="md:w-1/2 mx-auto p-3 bg-white rounded-lg">
           <form
             action="https://brnbw.us8.list-manage.com/subscribe/post?u=56b30b1ea0286dd3e796d4c9a&amp;id=2d7693c57f"
             method="post"
