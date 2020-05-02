@@ -1,3 +1,7 @@
+/* purgecss start ignore */
+@import './prism-nord';
+/* purgecss end ignore */
+
 :root {
   --spr-mint: rgba(160, 255, 228, 1);
   --spr-blue: rgba(134, 217, 255, 1);
