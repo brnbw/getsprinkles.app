@@ -3,3 +3,6 @@ dist
 .cache
 yarn-error.log
 public/styles.css
+
+# Local Netlify folder
+.netlify
