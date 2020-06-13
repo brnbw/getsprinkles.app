@@ -1,4 +1,5 @@
-@import "./prism-nord";
+@import "./source-theme";
+@import "./BasierCircle/font-face";
 
 :root {
   --spr-modest-navy: #242a35;
@@ -18,7 +19,7 @@
 @tailwind base;
 
 html {
-  font-family: "Basier Circle", sans-serif;
+  font-family: "Basier Circle Embedded", sans-serif;
 }
 
 body {

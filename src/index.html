@@ -39,7 +39,7 @@
               <h1 class="text-7xl font-bold leading-none mb-3">
                 Customize any website
               </h1>
-              <h2 class="text-2xl text-gray-800">
+              <h2 class="text-2xl text-gray-800 font-normal">
                 Part Mac app, part browser extension.<br />
                 Your CSS and JavaScript.
               </h2>
@@ -47,7 +47,7 @@
 
             <div class="my-3">&nbsp;</div>
 
-            <div x-data="{ tab: 1 }">
+            <div x-data="{ tab: 0 }">
               <div
                 class="shadow-xl px-1 bg-white text-gray-800 rounded-lg z-10 transition-all"
                 :class="tab > 0 ? 'md:-mr-64' : ''"
@@ -186,7 +186,7 @@ document.addEventListener("keyup", event => {
 
     <div class="bg-white text-gray-800 p-3 md:py-6">
       <div
-        class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-5"
+        class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-16"
       >
         <article class="">
           <h3 class="text-4xl">How does it work?</h3>
@@ -223,7 +223,7 @@ document.addEventListener("keyup", event => {
 
         <img src="./cake-ui.png" class="w-full" />
 
-        <article class="">
+        <article class="self-center">
           <h3 class="text-4xl">Interested?</h3>
           <p class="mb-4">
             Sprinkles is still getting ready for its first release — but you can
@@ -277,14 +277,23 @@ document.addEventListener("keyup", event => {
         </article>
       </div>
     </div>
-    <footer class="text-center text-sm py-6 mb-6 font-sans">
-      <div class="py-6">
-        <a href="/" class="text-black font-bold">Sprinkles</a>
+    <footer class="text-center text-sm font-sans">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+        <path
+          fill="#000"
+          fill-opacity="1"
+          d="M0,160L60,144C120,128,240,96,360,101.3C480,107,600,149,720,149.3C840,149,960,107,1080,90.7C1200,75,1320,85,1380,90.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+      <div class="bg-black text-white py-6">
+        <a href="/" class="text-spr-yellow font-semibold">Sprinkles</a>
         is a
-        <a href="https://brainbow.studio" class="text-black font-bold"
+        <a href="https://brainbow.studio" class="text-spr-yellow font-semibold"
           >Brainbow</a
         >
         project.
+
+        <div class="h-6xl">&nbsp;</div>
       </div>
     </footer>
   </body>

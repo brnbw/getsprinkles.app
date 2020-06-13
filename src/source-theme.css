@@ -103,9 +103,9 @@ pre[class*="language-"] {
 /*   font-weight: bold; */
 /* } */
 
-.token.italic {
-  font-style: italic;
-}
+/* .token.italic { */
+/*   font-style: italic; */
+/* } */
 
 /* .token.entity { */
 /*   cursor: help; */
