@@ -13,87 +13,139 @@
     <title>Sprinkles – Customize any website</title>
     <script src="./main.js" defer></script>
   </head>
-  <body class="text-lg text-gray-200 font-sans">
-    <nav
-      class="container p-3 md:p-6 mx-auto flex items-center space-x-2 text-xs"
-    >
-      <a href="/" class="btn border-gray-700">
-        <img src="./AppIcon-512px.png" width="16" class="block mr-1" />
-        Sprinkles
-      </a>
-      <a href="#sign-up" class="btn hidden sm:block">Download for macOS</a>
-      <a href="/support" class="btn">Support</a>
-      <div class="flex-auto"></div>
-      <a href="#sign-up" class="cursor-not-allowed opacity-25 hidden sm:block"
-        ><img src="./app-store.svg" class="float-right"
-      /></a>
-    </nav>
+  <body class="">
+    <div class="pastel-gradient">
+      <header class="container p-6 pb-0 mx-auto">
+        <nav class="flex items-center space-x-2">
+          <a
+            href="/"
+            class="btn bg-gray-900 text-white font-semibold px-4 text-md rounded-full"
+          >
+            <img src="./AppIcon-512px.png" width="24" class="block mr-1" />
+            Sprinkles
+          </a>
+          <div class="flex-auto"></div>
+          <a href="#sign-up" class="cursor-not-allowed hidden sm:block"
+            ><img src="./app-store-black.svg" class="border-none float-right"
+          /></a>
+        </nav>
 
-    <header class="container p-3 md:p-6 md:my-6 py-3 mx-auto leading-none">
-      <h1
-        class="mt-3 pastel-gradient bg-clip-text mb-6 text-3xl lg:text-6xl xl:text-7xl max-w-4xl font-black"
-      >
-        Modify any website with your own CSS and JavaScript
-      </h1>
-      <h2 class="font-normal text-xl leading-tight">
-        <span class="text-gray-600">Part Mac app, part browser extension.</span>
-        Let's see how it works&hellip;
-      </h2>
-    </header>
-    <div class="h-6 hidden sm:block"></div>
-    <div
-      class="container px-3 md:px-6 mx-auto md:flex items-start justify-center mb-6"
-      x-data="{ tab: 0 }"
-    >
-      <div
-        class="flex-none w-full md:w-1/2 shadow-xl text-white text-xs font-mono px-1 subpixel-antialiased bg-nord rounded-lg leading-normal overflow-hidden"
-      >
-        <div class="flex items-center px-3 pt-2">
-          <div class="flex flex-none space-x-2">
-            <span class="h-3 w-3 bg-red-500 rounded-full"></span>
-            <span class="h-3 w-3 bg-orange-300 rounded-full"></span>
-            <span class="h-3 w-3 bg-green-500 rounded-full"></span>
-          </div>
-          <div class="w-2"></div>
-          <div
-            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
-            :class="tab == 0 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
-            @click="tab = 0"
-          >
-            news.ycombinator.com.css
-          </div>
-          <div
-            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
-            :class="tab == 1 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
-            @click="tab = 1"
-          >
-            global.js
-          </div>
-        </div>
-        <pre x-show="tab == 0"><code class="language-css text-sm">/**
- * When you visit any site, Sprinkles checks a directory on your
- * computer for .css and .js files matching the site's hostname.
+        <div class="h-6xl">&nbsp;</div>
+
+        <section class="mt-6 flex space-x-2 min-h-screen">
+          <div class="w-1/2 flex-none z-20">
+            <header class="mb-6">
+              <div class="h-16"></div>
+              <h1 class="text-7xl font-bold leading-none mb-3">
+                Customize any website
+              </h1>
+              <h2 class="text-2xl text-gray-800">
+                Part Mac app, part browser extension.<br />
+                Your CSS and JavaScript.
+              </h2>
+            </header>
+
+            <div class="my-3">&nbsp;</div>
+
+            <div x-data="{ tab: 1 }">
+              <div
+                class="shadow-xl px-1 bg-white text-gray-800 rounded-lg z-10 transition-all"
+                :class="tab > 0 ? 'md:-mr-64' : ''"
+              >
+                <nav
+                  class="flex items-center px-2 pt-1 text-sm font-semibold font-sans"
+                >
+                  <div class="flex flex-none space-x-2">
+                    <span class="h-3 w-3 bg-red-500 rounded-full"></span>
+                    <span class="h-3 w-3 bg-orange-300 rounded-full"></span>
+                    <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+                  </div>
+                  <div class="w-2"></div>
+                  <div
+                    class="flex-auto text-center border-b-2 py-2 cursor-pointer truncate"
+                    :class="tab == 0 ? 'text-gray-700 border-gray-400' : 'text-gray-500 border-gray-200'"
+                    @click="tab = 0"
+                  >
+                    github.com.css
+                  </div>
+                  <div
+                    class="flex-auto text-center border-b-2 py-2 cursor-pointer truncate"
+                    :class="tab == 1 ? 'text-gray-700 border-gray-400' : 'text-gray-500 border-gray-200'"
+                    @click="tab = 1"
+                  >
+                    twitter.com.js
+                  </div>
+                  <div
+                    class="flex-auto text-center border-b-2 py-2 cursor-pointer truncate"
+                    :class="tab == 2 ? 'text-gray-700 border-gray-400' : 'text-gray-500 border-gray-200'"
+                    @click="tab = 2"
+                  >
+                    global.js
+                  </div>
+                </nav>
+
+                <pre
+                  class="language-css text-xs xl:text-sm"
+                  x-show="tab == 0"
+                ><code>/**
+ * When you visit any website, Sprinkles checks a directory
+ * on your computer for .css and .js files matching the
+ * site's hostname, then applies those to the site.
  *
- * For example, let's make The Orange Website™ actually readable,
- * in news.ycombinator.com.css:
+ * For example, to make GitHub a more fruity experience,
+ * in github.com.css:
  */
-* { font-family: system-ui !important; }
-.title { font-size: 18px; font-weight: 600; }
-.comment { font-size: 16px; line-height: 1.5; max-width: 48em; }
-.subtext { font-size: 14px; }
-tr.spacer { height: 14px !important; }
 
-/* Make it more creeaaammmyyy */
 body { background: papayawhip; }
-/* Why the hell not? */
-#hnmain {
-  padding: 12px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 25px;
-  margin: 20px auto;
-  display: block;
-}</code></pre>
-        <pre x-show="tab == 1" x-cloak><code class="language-js text-sm">//
-// Code in global.js and global.css will be loaded on all sites.
+
+/**
+ * Seemingly innocent but this is web browsing super powers.
+ *
+ * You can change badly chosen fonts or hide any element from
+ * your favourite websites. Whatever CSS can do, you can do.
+ *
+ * To really get cooking, we can add JavaScript too – try
+ * changing the file above ⤴
+ */</code></pre>
+                <pre
+                  x-show="tab == 1"
+                  x-cloak
+                ><code class="language-js text-xs xl:text-sm">// I like my tweets in "Latest tweets" mode.
+// Too much algo, no thanks!
+//
+// This snippet automatically clicks all the buttons to bring back
+// Latest Tweets whenever Twitter switches preferences for me.
+
+let attempts = 0;
+
+function main() {
+  attempts++;
+
+  // Find the header signifying current timeline mode
+  const title = document.querySelector('[data-testid="primaryColumn"] h2[role="heading"]');
+
+  // If it hasn't loaded yet, try again in 0.5 secs
+  if (!title &amp;&amp; attempts < 10) { setTimeout(main, 500); return; }
+
+  // If not matching Home, stop looking
+  if (title.innerText !== "Home") return;
+
+  // Click ✨
+  document.querySelector('[aria-label="Top Tweets on"]').click();
+
+  // Wait 0.5 secs then click "Latest tweets"
+  setTimeout(() => {
+    document.querySelector('div[role="menuitem"]').click();
+  }, 500);
+}
+
+main();
+
+// We can even add code to *all* sites, try the next file ⤴</code></pre>
+                <pre
+                  x-show="tab == 2"
+                  x-cloak
+                ><code class="language-js text-xs xl:text-sm">// Code in global.js and global.css will be loaded on all sites.
 //
 // Here's a snippet from my global.js that gives me a panic button to
 // fix anything but pleasant typography. Which I do all the time:
@@ -107,34 +159,37 @@ document.addEventListener("keyup", event => {
 
     styleElm = document.createElement("style");
     styleElm.innerHTML = `
-      * {
-        font-family: system-ui, sans-serif !important;
-      }
-      body {
-        font-size: 16px;
-        letter-spacing: 0;
-      }
-      p {
-        font-weight: 400 !important;
-        max-width: 40em;
-        line-height: 1.5 !important;
-      }
+      * { font-family: system-ui, sans-serif !important; }
     `;
     document.body.appendChild(styleElm);
   }
 });</code></pre>
-      </div>
-      <div class="flex-auto hidden sm:block">
-        <img src="./browsers@2x.png" class="w100" />
-      </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2 flex-auto z-10">
+            <img src="./sprinkles-girl@2x.png" class="block w-full" />
+          </div>
+        </section>
+      </header>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,160L60,144C120,128,240,96,360,101.3C480,107,600,149,720,149.3C840,149,960,107,1080,90.7C1200,75,1320,85,1380,90.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
     </div>
 
     <div class="h-6 hidden sm:block"></div>
 
-    <div class="pastel-gradient text-black p-3 md:py-6">
-      <div class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-3">
+    <div class="bg-white text-gray-800 p-3 md:py-6">
+      <div
+        class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-5"
+      >
         <article class="">
-          <h3>How does it work?</h3>
+          <h3 class="text-4xl">How does it work?</h3>
           <p>
             Sprinkles runs a tiny webserver on you machine. When you visit a
             website, the browser extension asks this server for scripts. The
@@ -152,7 +207,7 @@ document.addEventListener("keyup", event => {
         </article>
 
         <article class="">
-          <h3>Why is it great?</h3>
+          <h3 class="text-4xl">Why is it great?</h3>
           <ol class="list-decimal">
             <li>Edit scripts in the editor of your choice</li>
             <li>
@@ -165,11 +220,11 @@ document.addEventListener("keyup", event => {
             </li>
           </ol>
         </article>
-      </div>
 
-      <div class="py-6 mx-auto text-lg lg:text-xl max-w-5xl">
-        <article class="md:w-1/2 mx-auto">
-          <h3>Interested?</h3>
+        <img src="./cake-ui.png" class="w-full" />
+
+        <article class="">
+          <h3 class="text-4xl">Interested?</h3>
           <p class="mb-4">
             Sprinkles is still getting ready for its first release — but you can
             try it now if you aren't scared away by words like beta or
@@ -179,51 +234,56 @@ document.addEventListener("keyup", event => {
             Sign up to download the beta and get updates on development. No
             spam, of course.
           </p>
-        </article>
 
-        <div class="h-6 my-3"></div>
+          <div class="h-6 my-3"></div>
 
-        <div class="md:w-1/2 mx-auto p-3 bg-white rounded-lg">
-          <form
-            action="https://brnbw.us8.list-manage.com/subscribe/post?u=56b30b1ea0286dd3e796d4c9a&amp;id=2d7693c57f"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            class="measure center ma0"
-            target="_blank"
-            validate="validate"
-          >
-            <div class="md:flex items-stretch">
-              <input
-                type="email"
-                placeholder="tim@apple.com"
-                class="flex-auto input w-full md:w-auto"
-                name="EMAIL"
-                required=""
-              /><button
-                type="submit"
-                name="subscribe"
-                class="flex-none btn bg-black text-white w-full md:w-auto rounded px-3"
+          <div class="bg-white rounded-lg">
+            <form
+              action="https://brnbw.us8.list-manage.com/subscribe/post?u=56b30b1ea0286dd3e796d4c9a&amp;id=2d7693c57f"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="m-0"
+              target="_blank"
+              validate="validate"
+            >
+              <div class="md:flex items-stretch">
+                <input
+                  type="email"
+                  placeholder="tim@apple.com"
+                  class="flex-auto input w-full md:w-auto"
+                  name="EMAIL"
+                  required=""
+                /><button
+                  type="submit"
+                  name="subscribe"
+                  class="flex-none btn bg-black text-white w-full md:w-auto rounded px-3"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <div
+                style="position: absolute; left: -5000px;"
+                aria-hidden="true"
               >
-                Subscribe
-              </button>
-            </div>
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input
-                type="text"
-                name="b_56b30b1ea0286dd3e796d4c9a_2d7693c57f"
-                tabindex="-1"
-              />
-            </div>
-          </form>
-        </div>
+                <input
+                  type="text"
+                  name="b_56b30b1ea0286dd3e796d4c9a_2d7693c57f"
+                  tabindex="-1"
+                />
+              </div>
+            </form>
+          </div>
+        </article>
       </div>
     </div>
-    <footer class="text-center text-sm py-6 mb-6">
+    <footer class="text-center text-sm py-6 mb-6 font-sans">
       <div class="py-6">
-        <a href="/" class="text-spr-mint font-bold">Sprinkles</a>
+        <a href="/" class="text-black font-bold">Sprinkles</a>
         is a
-        <a href="https://brainbow.studio" class="text-spr-mint font-bold">Brainbow</a>
+        <a href="https://brainbow.studio" class="text-black font-bold"
+          >Brainbow</a
+        >
         project.
       </div>
     </footer>
