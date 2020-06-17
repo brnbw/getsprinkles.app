@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Sprinkles – Customize any website</title>
+    <script src="./main.js" defer></script>
+  </head>
+  <body class="text-lg text-gray-900">
+    <nav
+      class="container p-3 md:p-6 mx-auto flex items-center space-x-2 text-xs"
+    >
+      <a href="/" class="btn border-gray-700">
+        <img src="./AppIcon-512px.png" width="16" class="block mr-1" />
+        Sprinkles
+      </a>
+      <a href="#sign-up" class="btn hidden sm:block">Download for macOS</a>
+      <a href="/support" class="btn">Support</a>
+      <div class="flex-auto"></div>
+      <a href="#sign-up" class="cursor-not-allowed opacity-25 hidden sm:block"
+        ><img src="./app-store.svg" class="float-right"
+      /></a>
+    </nav>
+
+    <header class="container p-3 md:p-6 md:my-6 py-3 mx-auto">
+      <h1
+        class="text-3xl lg:text-6xl xl:text-7xl max-w-4xl font-black text-black"
+      >
+        Modify any website
+      </h1>
+      <h2 class="font-normal text-xl leading-tight">
+        Part Mac app, part browser extension. Let's see how it works&hellip;
+      </h2>
+    </header>
+    <div class="h-6 hidden sm:block"></div>
+    <div
+      class="container px-3 md:px-6 mx-auto md:flex items-start justify-center mb-6"
+      x-data="{ tab: 0 }"
+    >
+      <div
+        class="flex-none w-full md:w-1/2 shadow-xl text-white text-xs font-mono px-1 subpixel-antialiased bg-nord rounded-lg leading-normal overflow-hidden"
+      >
+        <div class="flex items-center px-3 pt-2">
+          <div class="flex flex-none space-x-2">
+            <span class="h-3 w-3 bg-red-500 rounded-full"></span>
+            <span class="h-3 w-3 bg-orange-300 rounded-full"></span>
+            <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+          </div>
+          <div class="w-2"></div>
+          <div
+            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
+            :class="tab == 0 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
+            @click="tab = 0"
+          >
+            news.ycombinator.com.css
+          </div>
+          <div
+            class="flex-auto text-center border-b-2 py-2 w-3 cursor-pointer truncate"
+            :class="tab == 1 ? 'text-white border-spr-pink' : 'text-gray-500 border-gray-700'"
+            @click="tab = 1"
+          >
+            global.js
+          </div>
+        </div>
+        <pre x-show="tab == 0"><code class="language-css text-sm">/**
+ * When you visit any site, Sprinkles checks a directory on your
+ * computer for .css and .js files matching the site's hostname.
+ *
+ * For example, let's make The Orange Website™ actually readable,
+ * in news.ycombinator.com.css:
+ */
+* { font-family: system-ui !important; }
+.title { font-size: 18px; font-weight: 600; }
+.comment { font-size: 16px; line-height: 1.5; max-width: 48em; }
+.subtext { font-size: 14px; }
+tr.spacer { height: 14px !important; }
+
+/* Make it more creeaaammmyyy */
+body { background: papayawhip; }
+/* Why the hell not? */
+#hnmain {
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 25px;
+  margin: 20px auto;
+  display: block;
+}</code></pre>
+        <pre x-show="tab == 1" x-cloak><code class="language-js text-sm">//
+// Code in global.js and global.css will be loaded on all sites.
+//
+// Here's a snippet from my global.js that gives me a panic button to
+// fix anything but pleasant typography. Which I do all the time:
+//
+let styleElm = null;
+
+document.addEventListener("keyup", event => {
+  // ctrl+alt+s toggles the font fix
+  if (event.keyCode === 83 && event.ctrlKey && event.altKey) {
+    if (styleElm) { styleElm.remove(); styleElm = null; return; }
+
+    styleElm = document.createElement("style");
+    styleElm.innerHTML = `
+      * {
+        font-family: system-ui, sans-serif !important;
+      }
+      body {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+      p {
+        font-weight: 400 !important;
+        max-width: 40em;
+        line-height: 1.5 !important;
+      }
+    `;
+    document.body.appendChild(styleElm);
+  }
+});</code></pre>
+      </div>
+      <div class="flex-auto hidden sm:block">
+        <img src="./sprinkles-girl.png" class="w100" />
+      </div>
+    </div>
+
+    <div class="h-6 hidden sm:block"></div>
+
+    <div class="pastel-gradient text-black p-3 md:py-6">
+      <div
+        class="py-6 mx-auto text-lg lg:text-xl grid md:grid-cols-2 max-w-5xl gap-3"
+      >
+        <article class="">
+          <h3>How does it work?</h3>
+          <p>
+            Sprinkles runs a tiny webserver on you machine. When you visit a
+            website, the browser extension asks this server for scripts. The
+            server looks for 4 files in your Sprinkles scripts directory:
+          </p>
+          <ol class="list-decimal">
+            <li><code>global.js</code></li>
+            <li><code>global.css</code></li>
+            <li><code>github.com.js</code></li>
+            <li><code>github.com.css</code></li>
+          </ol>
+          <p>
+            When there's a hit, the extension adds the provided JS and CSS.
+          </p>
+        </article>
+
+        <article class="">
+          <h3>Why is it great?</h3>
+          <ol class="list-decimal">
+            <li>Edit scripts in the editor of your choice</li>
+            <li>
+              Like UserScripts or Stylish &mdash; but combined and bundled into
+              one
+            </li>
+            <li>
+              Portable between browsers with support for Safari, Google Chrome
+              and Firefox
+            </li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="py-6 mx-auto text-lg lg:text-xl max-w-5xl">
+        <article class="md:w-1/2 mx-auto">
+          <h3>Interested?</h3>
+          <p class="mb-4">
+            Sprinkles is still getting ready for its first release — but you can
+            try it now if you aren't scared away by words like beta or
+            experimental. (I use it all day, every day.)
+          </p>
+          <p>
+            Sign up to download the beta and get updates on development. No
+            spam, of course.
+          </p>
+        </article>
+
+        <div class="h-6 my-3"></div>
+
+        <div class="md:w-1/2 mx-auto p-3 bg-white rounded-lg">
+          <form
+            action="https://brnbw.us8.list-manage.com/subscribe/post?u=56b30b1ea0286dd3e796d4c9a&amp;id=2d7693c57f"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="measure center ma0"
+            target="_blank"
+            validate="validate"
+          >
+            <div class="md:flex items-stretch">
+              <input
+                type="email"
+                placeholder="tim@apple.com"
+                class="flex-auto input w-full md:w-auto"
+                name="EMAIL"
+                required=""
+              /><button
+                type="submit"
+                name="subscribe"
+                class="flex-none btn bg-black text-white w-full md:w-auto rounded px-3"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input
+                type="text"
+                name="b_56b30b1ea0286dd3e796d4c9a_2d7693c57f"
+                tabindex="-1"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center text-sm py-6 mb-6">
+      <div class="py-6">
+        <a href="/" class="text-spr-mint font-bold">Sprinkles</a>
+        is a
+        <a href="https://brainbow.studio" class="text-spr-mint font-bold"
+          >Brainbow</a
+        >
+        project.
+      </div>
+    </footer>
+  </body>
+</html>
