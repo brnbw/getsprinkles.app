@@ -1,12 +1,11 @@
 {
   "name": "getsprinklesapp",
   "version": "1.0.0",
-  "main": "src/index.html",
+  "main": "dist/index.html",
   "scripts": {
     "dev": "parcel serve src/index.html",
-    "build": "NODE_ENV=production yarn parcel build --no-cache --dist-dir dist/ src/index.html"
+    "build": "NODE_ENV=production yarn parcel build --no-cache src/index.html"
   },
-  "app": "dist/index.html",
   "license": "MIT",
   "devDependencies": {
     "alpinejs": "^2.8.0",
