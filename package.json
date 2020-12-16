@@ -4,7 +4,7 @@
   "main": "src/index.html",
   "scripts": {
     "dev": "parcel serve src/index.html",
-    "build": "NODE_ENV=production yarn parcel build --no-cache src/index.html --dist-dir dist/"
+    "build": "NODE_ENV=production yarn parcel build --no-cache --dist-dir dist/ src/index.html"
   },
   "app": "dist/index.html",
   "license": "MIT",
